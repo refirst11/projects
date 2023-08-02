@@ -1,0 +1,31 @@
+.wrapper {
+  position: relative;
+  width: 600;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.inner {
+  border-radius: 50%;
+  background: pink;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+
+.result {
+  position: absolute;
+  top: 28px;
+}
+
+.view {
+  position: absolute;
+  top: 0;
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+}

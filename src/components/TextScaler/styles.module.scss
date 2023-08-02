@@ -1,0 +1,18 @@
+.positioning {
+  position: fixed;
+  display: flex;
+  bottom: 100px;
+  border: solid 2px black;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #fffffe;
+}
+
+@media screen and (max-width: 739.98px) {
+  .positioning {
+    z-index: 1;
+    bottom: 20px;
+    left: 20px;
+  }
+}

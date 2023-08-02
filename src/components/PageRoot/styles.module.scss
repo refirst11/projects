@@ -1,0 +1,12 @@
+.pages_root {
+  text-align: left;
+  padding: 120px 0;
+}
+
+@media screen and (max-width: 739.98px) {
+  .pages_root {
+    padding: 120px 16px;
+    width: 100%;
+    overflow: hidden;
+  }
+}
