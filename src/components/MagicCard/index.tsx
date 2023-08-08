@@ -27,7 +27,6 @@ const MagicCard = () => {
       {dayOrNight ? (
         <MagicCircle
           loading="lazy"
-          className={styles.component}
           classImages={styles.images}
           images={myImages}
           dynamic
@@ -56,26 +55,26 @@ const MagicCard = () => {
             selectRotateY: 40,
             selectRotateZ: -10,
           }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 1 }}
           pickProperty={{ classPick: styles.images }}
-          delay={60}
+          pickTransition={{ duration: 1, type: 'spring', mass: 1 }}
+          delay={200}
         />
       ) : (
         <MagicStraight
           loading="lazy"
-          vertical={false}
+          classImages={styles.images}
           images={myImages}
+          vertical={false}
           width={120}
           height={120}
           start={0}
           controller={40}
           reverseIndex={false}
-          className={styles.component}
-          classImages={styles.images}
           classImageSelect={styles.select}
           selectOffsetX={0}
           selectOffsetY={-120}
-          delay={50}
+          delay={200}
           animate={{
             scale: 0.8,
             rotateX: 20,
@@ -97,8 +96,8 @@ const MagicCard = () => {
             selectRotateY: 40,
             selectRotateZ: -10,
           }}
-          transition={{ duration: 1.4, type: 'spring', mass: 0.2 }}
-          pickTransition={{ duration: 0.2, type: 'spring', mass: 1 }}
+          transition={{ duration: 1, type: 'spring', mass: 0.2 }}
+          pickTransition={{ duration: 1, type: 'spring', mass: 1 }}
           pickProperty={{ classPick: styles.images, white: false, alpha: 0.2, blur: 20, scale: 2, offset: 0 }}
         />
       )}

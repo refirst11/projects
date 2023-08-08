@@ -1,19 +1,18 @@
 'use client'
 
-import React from 'react'
 import { TextScaler } from 'react-text-scaler'
 import styles from './styles.module.scss'
 
-const TextS = () => {
+const TextScale = () => {
   return (
     <TextScaler
-      target="main"
-      size={24}
       className={styles.positioning}
-      sliderPosition={-84}
-      sliderColor={{ handleBorderColor: 'black', handleColor: 'white', color: 'white', borderColor: 'black' }}
+      classBox={styles.box}
+      classSlider={styles.slider}
+      target={'main'}
+      size={186}
     />
   )
 }
 
-export default TextS
+export default TextScale

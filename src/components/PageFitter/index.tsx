@@ -19,7 +19,7 @@ export const PageFitter = () => {
         onPointerDown={() => setViewport(!viewport)}
         style={{ border: viewport ? 'solid 2px skyblue' : 'none' }}
       >
-        がんばれ がんばる Viewport
+        Viewport
       </button>
       <Fukuwarai>
         <div className={styles.inner} />

@@ -1,6 +1,7 @@
 .list_count {
   position: relative;
   display: grid;
+  grid-auto-flow: row-reverse;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
