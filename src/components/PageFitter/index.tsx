@@ -14,12 +14,13 @@ export const PageFitter = () => {
       <div className={styles.result}>
         isFit → {isFit === undefined ? 'undefined' : isFit === true ? 'true' : 'false'}
       </div>
+
       <button
         className={styles.view}
         onPointerDown={() => setViewport(!viewport)}
         style={{ border: viewport ? 'solid 2px skyblue' : 'none' }}
       >
-        Viewport
+        がんばれ がんばるViewport
       </button>
       <Fukuwarai>
         <div className={styles.inner} />
