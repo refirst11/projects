@@ -1,12 +1,11 @@
 'use client'
 
-import { useState } from 'react'
 import { m } from 'framer-motion'
 import styles from './styles.module.scss'
 import Link from 'next/link'
 
 const SideLink = () => {
-  const url = String(process.env.SENTRY_URL)
+  const url = String(process.env.EN_URL)
   const linkArr = [
     {
       title: 'Projects',
@@ -17,7 +16,6 @@ const SideLink = () => {
       slug: url,
     },
   ]
-  const [isHover, setIsHover] = useState('')
 
   return (
     <div className={styles.side_fixed}>
@@ -25,9 +23,9 @@ const SideLink = () => {
         {linkArr.map(({ slug, title }) => (
           <m.li
             animate={{
-              x: isHover == slug ? 40 : 0,
-              fontSize: isHover == slug ? '14px' : '10px',
-              height: isHover == slug ? '80px' : '40px',
+              x: 12,
+              fontSize: '10px',
+              height: '40px',
               transition: {
                 x: {
                   delay: 0,
@@ -45,8 +43,6 @@ const SideLink = () => {
             }}
             className={styles.list_box}
             key={slug}
-            onMouseEnter={() => setIsHover(slug)}
-            onMouseLeave={() => setIsHover('')}
           >
             {slug == '/' ? (
               <Link className={styles.link_box} href={slug}>
