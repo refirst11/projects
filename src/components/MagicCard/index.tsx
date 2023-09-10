@@ -24,9 +24,8 @@ const MagicCard = () => {
 
   return (
     <div className={styles.container}>
-      {!dayOrNight ? (
+      {dayOrNight ? (
         <MagicCircle
-          loading="lazy"
           classImages={styles.images}
           images={myImages}
           dynamic
@@ -35,6 +34,8 @@ const MagicCard = () => {
           width={140}
           height={140}
           controller={40}
+          fadeRange={10}
+          transTime={0.5}
           animate={{
             scale: 0.8,
             rotateX: 20,
@@ -55,21 +56,22 @@ const MagicCard = () => {
             selectRotateY: 40,
             selectRotateZ: -10,
           }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: 'easeInOut' }}
+          pickTransition={{ duration: 0.8, ease: 'easeInOut' }}
           pickProperty={{ classPick: styles.images }}
-          pickTransition={{ duration: 1, type: 'spring', mass: 1 }}
           delay={200}
         />
       ) : (
         <MagicStraight
-          loading="lazy"
           classImages={styles.images}
           images={myImages}
-          width={120}
-          height={120}
-          start={0}
+          vertical={false}
+          width={150}
+          height={150}
+          start={1}
           controller={40}
-          delay={200}
+          fadeRange={2}
+          transTime={0.2}
           animate={{
             scale: 0.8,
             opacity: 1,
@@ -77,11 +79,12 @@ const MagicCard = () => {
           }}
           initial={{
             scale: 0.8,
-            selectScale: 1.6,
+            selectScale: 2.99,
           }}
-          transition={{ duration: 1, type: 'spring', mass: 0.2 }}
-          pickTransition={{ duration: 1, type: 'spring', mass: 1 }}
-          pickProperty={{ classPick: styles.images, white: false, alpha: 0.2, blur: 20, scale: 2, offset: 0 }}
+          transition={{ duration: 0.357, ease: 'easeInOut' }}
+          pickTransition={{ duration: 0.357, ease: 'easeInOut' }}
+          pickProperty={{ classPick: styles.images }}
+          delay={200}
         />
       )}
     </div>
