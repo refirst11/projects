@@ -5,21 +5,6 @@
   width: 0px;
   height: 2px;
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  border: 1px solid #000;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #f0f0f0;
-}
 
 :root {
   --color-second-color: rgb(150 150 150);
@@ -43,11 +28,11 @@ body {
   color: rgb(55 65 81);
   text-align: left;
   text-wrap: balance;
-  width: 600px;
-  left: 190px;
+  width: 100%;
   word-break: break-all;
   margin: auto;
   min-height: 100vh;
+  text-align: center;
   font-size: 14px;
 }
 

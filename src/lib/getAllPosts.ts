@@ -8,23 +8,26 @@ const getAllPosts = async (skip?: number, limit?: number): Promise<PostsData[]> 
   const folder = path.join(process.cwd(), '/src/projects')
   const files = await fs.readdir(folder)
   const posts = await Promise.all(
-    files
-      .reverse()
-      .slice(skip, limit)
-      .map(async (fileName) => {
-        const fullPath = path.join(folder, fileName)
-        const file = await fs.readFile(fullPath, 'utf8')
-        const { data } = matter<string, PostsDataMap>(file)
+    files.slice(skip, limit).map(async (fileName) => {
+      const fullPath = path.join(folder, fileName)
+      const file = await fs.readFile(fullPath, 'utf8')
+      const { data } = matter<string, PostsDataMap>(file)
 
-        return {
-          slug: fileName.replace(/\.mdx$/, ''),
-          title: data.title as string,
-          subtitle: data.subtitle as string,
-          date: data.date as string,
-        }
-      })
+      return {
+        slug: fileName.replace(/\.mdx$/, ''),
+        title: data.title as string,
+        subtitle: data.subtitle as string,
+        date: data.date as string,
+      }
+    })
   )
-  return posts
+  const data = posts.sort((b, a) => {
+    const dateA = new Date(a.date)
+    const dateB = new Date(b.date)
+
+    return dateB.getTime() - dateA.getTime()
+  })
+  return data
 }
 
 export default getAllPosts

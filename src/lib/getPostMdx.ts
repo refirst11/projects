@@ -5,13 +5,15 @@ import rehypePrettyCode from 'rehype-pretty-code'
 import { ReturnData, PostData } from 'types/PostData'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import MagicCard from 'components/MagicCard'
-import { PageFitter } from 'components/PageFitter'
+import PageFitter from 'components/PageFitter'
 import TextScaler from 'components/TextScaler'
+import NavigateMotionLink from 'components/NavigateMotion'
 
 const Element = {
   MagicCard,
   PageFitter,
   TextScaler,
+  NavigateMotionLink,
 }
 
 const getPostMdx = async (slug: string): Promise<ReturnData> => {

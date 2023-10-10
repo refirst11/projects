@@ -21,8 +21,12 @@ export const dynamicParams = false
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const font = playfair.className + ' ' + source.variable + ' ' + italianno.variable
+  const url = process.env.EN_URL || ''
   return (
     <html lang="en">
+      <head>
+        <link rel="prefetch" href={url} />
+      </head>
       <body className={font}>
         <Layout>
           <Analytics mode={'production'} />

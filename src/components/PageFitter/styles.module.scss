@@ -1,4 +1,4 @@
-.wrapper {
+.room {
   position: relative;
   width: 600;
   height: 400px;
@@ -7,25 +7,14 @@
   display: flex;
 }
 
-.inner {
-  border-radius: 50%;
-  background: pink;
-  width: 200px;
-  height: 200px;
+.dog {
+  z-index: 3;
+  position: relative;
   cursor: pointer;
-}
-
-.result {
-  position: absolute;
-  top: 28px;
 }
 
 .view {
   position: absolute;
   top: 0;
-}
-
-.box {
-  width: 200px;
-  height: 100px;
+  cursor: pointer;
 }

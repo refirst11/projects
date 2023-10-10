@@ -22,7 +22,7 @@ async function Page() {
       {posts?.map(({ slug, title, subtitle }) => (
         <li key={slug} className={styles.list_style}>
           <Link href={`/${slug}`} className={styles.link_card}>
-            <h2>{title}</h2>
+            <h2 className={styles.title}>{title}</h2>
             <p>{subtitle}</p>
           </Link>
         </li>

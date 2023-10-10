@@ -10,7 +10,7 @@ const TextScale = () => {
       classBox={styles.box}
       classSlider={styles.slider}
       target={'main'}
-      size={186}
+      size={124}
     />
   )
 }

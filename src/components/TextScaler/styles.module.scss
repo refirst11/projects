@@ -1,6 +1,8 @@
 .positioning {
   position: fixed;
-  bottom: 100px;
+  top: 0;
+  bottom: 0;
+  margin-left: -60px;
   color: var(--color-text);
 }
 
@@ -18,7 +20,10 @@
 
 @media screen and (max-width: 739.98px) {
   .positioning {
-    left: 50px;
+    top: 150px;
+    left: 60px;
+    right: 0;
+    bottom: auto;
   }
 
   .slider {

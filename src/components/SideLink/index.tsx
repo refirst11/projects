@@ -3,20 +3,21 @@
 import { m } from 'framer-motion'
 import styles from './styles.module.scss'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const SideLink = () => {
-  const url = String(process.env.EN_URL)
+  const url = process.env.MAIN_URL || ''
   const linkArr = [
     {
       title: 'Projects',
       slug: '/',
     },
     {
-      title: 'Biography',
+      title: 'Bio(EN)',
       slug: url,
     },
   ]
-
+  const pathname = usePathname()
   return (
     <div className={styles.side_fixed}>
       <ul className={styles.ul_box}>
@@ -44,8 +45,8 @@ const SideLink = () => {
             className={styles.list_box}
             key={slug}
           >
-            {slug == '/' ? (
-              <Link className={styles.link_box} href={slug}>
+            {slug === '/' ? (
+              <Link className={styles.link_box + ' ' + (pathname === '/' ? styles.current_link : '')} href={slug}>
                 {title}
               </Link>
             ) : (

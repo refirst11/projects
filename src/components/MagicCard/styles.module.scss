@@ -1,6 +1,4 @@
 .images {
-  border: solid 0.25px skyblue;
-  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -8,4 +6,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.rotate {
+  transform: rotate(-45deg);
 }

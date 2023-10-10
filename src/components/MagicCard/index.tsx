@@ -1,45 +1,50 @@
 'use client'
 
-import { MagicCircle, MagicStraight } from 'react-magic-card'
+import { CircleRotation, StraightInfinity } from 'react-magic-card'
 import styles from './styles.module.scss'
 
 const MagicCard = () => {
-  const myImages = [
+  const images = [
     {
-      src: '/1.jpg',
-      alt: 'fire',
+      src: '/pexels-alex-andrews-821736.jpg',
+      alt: 'Alex Andrews the pexels picture',
     },
     {
-      src: '/2.jpg',
-      alt: 'sleep',
+      src: '/pexels-cottonbro-studio-6869655.jpg',
+      alt: 'Cottonbro Studio the pexels picture',
     },
     {
-      src: '/3.jpg',
-      alt: 'vocal',
+      src: '/pexels-matheus-bertelli-7410722.jpg',
+      alt: 'Matheus Bertelli the pexels picture',
+    },
+    {
+      src: '/pexels-matteo-petralli-1828875.jpg',
+      alt: 'Matteo Petralli the pexels picture',
+    },
+    {
+      src: '/pexels-timo-volz-3643714.jpg',
+      alt: 'Timo Volz the pexels picture',
     },
   ]
 
   const time = new Date().getHours()
-  const dayOrNight = time > 17 || time < 5
+  const heatTime = (time >= 21 && time <= 24) || (time >= 0 && time < 2)
 
   return (
     <div className={styles.container}>
-      {dayOrNight ? (
-        <MagicCircle
+      {heatTime ? (
+        <CircleRotation
           classImages={styles.images}
-          images={myImages}
-          dynamic
-          start={1}
-          radius={200}
-          width={140}
-          height={140}
+          images={images}
+          start={Math.ceil(images.length / 2 - 1)}
+          radius={150}
+          width={100}
+          height={150}
           controller={40}
-          fadeRange={10}
-          transTime={0.5}
           animate={{
             scale: 0.8,
-            rotateX: 20,
-            rotateY: 20,
+            rotateX: 66,
+            rotateY: 66,
             rotateZ: -10,
             selectScale: 1.6,
             selectRotateX: 20,
@@ -47,44 +52,43 @@ const MagicCard = () => {
             selectRotateZ: -10,
           }}
           initial={{
-            scale: 0.8,
-            rotateX: 70,
-            rotateY: 40,
+            rotateX: 246,
+            rotateY: 246,
             rotateZ: -50,
             selectScale: 1.6,
             selectRotateX: 40,
             selectRotateY: 40,
             selectRotateZ: -10,
           }}
-          transition={{ duration: 0.8, ease: 'easeInOut' }}
-          pickTransition={{ duration: 0.8, ease: 'easeInOut' }}
-          pickProperty={{ classPick: styles.images }}
-          delay={200}
+          transition={{ duration: 0.8, type: 'spring', mass: 0.93 }}
+          detailProperty={{ scale: 3 }}
+          detailTransition={{ duration: 0.2 }}
         />
       ) : (
-        <MagicStraight
+        <StraightInfinity
+          className={styles.rotate}
           classImages={styles.images}
-          images={myImages}
-          vertical={false}
-          width={150}
-          height={150}
-          start={1}
-          controller={40}
-          fadeRange={2}
-          transTime={0.2}
+          images={images}
+          width={200}
+          height={300}
+          start={Math.ceil(images.length / 2 - 1)}
+          controller={200}
+          margin={-20}
           animate={{
             scale: 0.8,
             opacity: 1,
-            selectScale: 1,
+            selectScale: 1.2,
+            selectRotate: 45,
+            rotateY: -50,
+            rotateX: -20,
           }}
           initial={{
             scale: 0.8,
             selectScale: 2.99,
           }}
-          transition={{ duration: 0.357, ease: 'easeInOut' }}
-          pickTransition={{ duration: 0.357, ease: 'easeInOut' }}
-          pickProperty={{ classPick: styles.images }}
-          delay={200}
+          transition={{ duration: 0.32, type: 'spring', mass: 0.93 }}
+          detailProperty={{ rotate: -45 }}
+          detailTransition={{ duration: 0.2 }}
         />
       )}
     </div>

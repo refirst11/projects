@@ -36,6 +36,10 @@
   height: inherit;
 }
 
+.current_link {
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 739.98px) {
   .side_fixed {
     position: absolute;
