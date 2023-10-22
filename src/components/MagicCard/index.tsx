@@ -2,8 +2,10 @@
 
 import { CircleRotation, StraightInfinity } from 'react-magic-card'
 import styles from './styles.module.scss'
+import { useState } from 'react'
 
 const MagicCard = () => {
+  const [toggle, setToggle] = useState(false)
   const images = [
     {
       src: '/pexels-alex-andrews-821736.jpg',
@@ -27,12 +29,12 @@ const MagicCard = () => {
     },
   ]
 
-  const time = new Date().getHours()
-  const heatTime = (time >= 21 && time <= 24) || (time >= 0 && time < 2)
-
   return (
     <div className={styles.container}>
-      {heatTime ? (
+      <button className={styles.button} onClick={() => setToggle(!toggle)}>
+        []
+      </button>
+      {toggle ? (
         <CircleRotation
           classImages={styles.images}
           images={images}
