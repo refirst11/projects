@@ -7,13 +7,13 @@ import { compileMDX } from 'next-mdx-remote/rsc'
 import MagicCard from 'components/MagicCard'
 import PageFitter from 'components/PageFitter'
 import TextScaler from 'components/TextScaler'
-import NavigateMotionLink from 'components/NavigateMotion'
+import Firemotion from 'components/Firemotion'
 
 const Element = {
   MagicCard,
   PageFitter,
   TextScaler,
-  NavigateMotionLink,
+  Firemotion,
 }
 
 const getPostMdx = async (slug: string): Promise<ReturnData> => {
