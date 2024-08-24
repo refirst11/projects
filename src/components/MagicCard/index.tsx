@@ -32,7 +32,7 @@ const MagicCard = () => {
   return (
     <div className={styles.container}>
       <button className={styles.button} onClick={() => setToggle(!toggle)}>
-        []
+        Toggle
       </button>
       {toggle ? (
         <CircleRotation
@@ -44,10 +44,10 @@ const MagicCard = () => {
           height={150}
           controller={40}
           animate={{
-            scale: 0.8,
-            rotateX: 66,
-            rotateY: 66,
-            rotateZ: -10,
+            scale: 0.6,
+            rotateX: -26,
+            rotateY: 26,
+            rotateZ: 14,
             selectScale: 1.6,
             selectRotateX: 20,
             selectRotateY: 20,
@@ -62,7 +62,7 @@ const MagicCard = () => {
             selectRotateY: 40,
             selectRotateZ: -10,
           }}
-          transition={{ duration: 0.8, type: 'spring', mass: 0.93 }}
+          transition={{ duration: 0.12, type: 'spring', mass: 0.93 }}
           detailProperty={{ scale: 3 }}
           detailTransition={{ duration: 0.2 }}
         />
@@ -88,7 +88,7 @@ const MagicCard = () => {
             scale: 0.8,
             selectScale: 2.99,
           }}
-          transition={{ duration: 0.32, type: 'spring', mass: 0.93 }}
+          transition={{ duration: 0.12, type: 'spring', mass: 0.93 }}
           detailProperty={{ rotate: -45 }}
           detailTransition={{ duration: 0.2 }}
         />
