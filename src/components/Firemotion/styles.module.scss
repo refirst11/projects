@@ -1,0 +1,17 @@
+.base {
+  width: 600px;
+  font-size: large;
+  opacity: 1;
+  clip-path: circle(150% at 50% 50%);
+  transition: all 1s ease-in-out;
+}
+
+.entry {
+  opacity: 0;
+  clip-path: circle(0% at 50% 50%);
+}
+
+.exit {
+  opacity: 0;
+  clip-path: circle(0% at 50% 50%);
+}
