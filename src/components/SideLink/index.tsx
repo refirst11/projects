@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const SideLink = () => {
-  const url = process.env.MAIN_URL || ''
+  const url = process.env.EN_URL || ''
   const linkArr = [
     {
       title: 'Projects',
