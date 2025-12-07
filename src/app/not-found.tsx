@@ -1,12 +1,13 @@
-import Link from 'next/link';
-import generateSEOData from 'lib/generateSEOData';
-import { Metadata } from 'next';
+import Link from 'next/link'
+import generateSEOData from 'lib/generateSEOData'
+import { Metadata } from 'next'
+import { JSX } from 'react'
 
 export const metadata: Metadata = generateSEOData({
   title: 'not found 404',
   subtitle: 'not found url error code is 404',
   date: 'now',
-});
+})
 
 const NotFound = (): JSX.Element => {
   return (
@@ -17,7 +18,7 @@ const NotFound = (): JSX.Element => {
         <Link href="/">Return to Top page</Link>
       </dl>
     </>
-  );
-};
+  )
+}
 
-export default NotFound;
+export default NotFound
