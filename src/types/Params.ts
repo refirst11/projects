@@ -1,6 +1,6 @@
 type Params = {
-  params: {
-    slug: string;
-  };
-};
-export default Params;
+  params: Promise<{
+    slug: string
+  }>
+}
+export default Params
