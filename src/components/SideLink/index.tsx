@@ -6,7 +6,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const SideLink = () => {
-  const url = process.env.EN_URL || ''
+  const url = process.env.NEXT_PUBLIC_EN_URL
+
   const linkArr = [
     {
       title: 'Projects',
@@ -23,6 +24,7 @@ const SideLink = () => {
       <ul className={styles.ul_box}>
         {linkArr.map(({ slug, title }) => (
           <m.li
+            key={title}
             animate={{
               x: 12,
               fontSize: '10px',
@@ -43,10 +45,12 @@ const SideLink = () => {
               },
             }}
             className={styles.list_box}
-            key={slug}
           >
             {slug === '/' ? (
-              <Link className={styles.link_box + ' ' + (pathname === '/' ? styles.current_link : '')} href={slug}>
+              <Link
+                className={[styles.link_box, pathname === '/' ? styles.current_link : ''].filter(Boolean).join(' ')}
+                href={slug}
+              >
                 {title}
               </Link>
             ) : (
