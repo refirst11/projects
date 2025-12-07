@@ -1,4 +1,5 @@
 import mdx from '@next/mdx'
+import type { NextConfig } from 'next'
 
 const securityHeaders = [
   {
@@ -26,10 +27,10 @@ const securityHeaders = [
     value: 'strict-origin-when-cross-origin',
   },
 ]
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: false,
 
+const nextConfig: NextConfig = {
+  reactStrictMode: false,
+  turbopack: {},
   async headers() {
     return [
       {
